@@ -1,0 +1,33 @@
+package motor;
+
+import java.sql.Time;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class B2bLogin {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\JAR\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://www.insurejoy.net/");
+		//driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		System.out.println(driver.getCurrentUrl());
+		driver.findElement(By.id("exampleInputEmail")).sendKeys("amitflm@insurejoy.com");
+		//driver.findElement(By.id("exampleInputPassword")).sendKeys("Insurejoy@123");
+		driver.findElement(By.xpath("//button[contains(text(),\"Let's Go\")]")).click();
+		System.out.println(driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[1]")).getText());
+		
+		Thread.sleep(5000);
+		System.out.println(driver.getCurrentUrl());
+	
+		driver.close();
+		
+	}
+
+}
