@@ -1,0 +1,36 @@
+package term;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Getquotes {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\JAR\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://qa.indiacover360.com/term-insurance");
+		driver.manage().window().maximize();
+		System.out.println(driver.getTitle());
+		System.out.println(driver.getCurrentUrl());
+		driver.findElement(By.xpath("//a[contains(text(),'Male')]")).click();
+		driver.findElement(By.xpath("//a[contains(text(),'No')]")).click();
+		
+		  WebElement annual_income = driver.findElement(By.id("userincome"));
+		  annual_income.click();
+		  annual_income.sendKeys("5 Lacs");
+		  annual_income.sendKeys(Keys.ARROW_DOWN);
+	    	annual_income.sendKeys(Keys.ENTER);
+	    	annual_income.sendKeys(Keys.RETURN);
+	    	annual_income.sendKeys(Keys.ENTER);
+	    	
+	    driver.findElement(By.id("Tel13")).sendKeys("14");
+	    	Thread.sleep(5000);
+	    	System.out.println(driver.getCurrentUrl());
+		driver.close();
+	}
+
+}
