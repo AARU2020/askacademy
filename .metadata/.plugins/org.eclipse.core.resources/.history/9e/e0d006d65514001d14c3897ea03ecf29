@@ -22,8 +22,7 @@ public class B2bLogin {
 		driver.findElement(By.xpath("//button[contains(text(),\"Let's Go\")]")).click();
 		System.out.println(driver.findElement(By.xpath("/html[1]/body[1]/app-root[1]/app-login[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[2]/div[1]/div[1]")).getText());
 		driver.findElement(By.linkText("Forgot Password ?")).click();
-		driver.findElement(By.xpath("//form/div/input")).sendKeys("satishkumar.avunoori@gmail.com");
-		//driver.findElement(By.xpath("//input[@placeholder='Enter Email Address...']")).sendKeys("satish.insurejoy@gmail.com");
+		driver.findElement(By.xpath("//input[@placeholder='Enter Email Address...']")).sendKeys("satish.insurejoy@gmail.com");
 		driver.findElement(By.cssSelector("input[placeholder='Enter Email Address...']")).clear();
 		driver.findElement(By.cssSelector("button[class='letsGo']")).click();
 
