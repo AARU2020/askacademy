@@ -5,6 +5,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v101.input.model.MouseButton;
+import org.openqa.selenium.interactions.Actions;
 
 public class Getquotes {
 
@@ -39,6 +41,13 @@ public class Getquotes {
 	    living_in.sendKeys("Hyderabad");
 	    living_in.sendKeys(Keys.ARROW_DOWN);
 	    living_in.sendKeys(Keys.ENTER);
+	    
+	    
+	    /* living_in=  driver.findElement(By.id("usercity"));
+	    Actions action = new Actions(driver);
+	    action.moveToElement(living_in).perform();
+	    action.moveToElement(subMenu).perform();
+	    action.moveToElement(course).click().perform(); */
 	    
 	    driver.findElement(By.id("usermob")).sendKeys("8686962868");
 	    

@@ -1,0 +1,32 @@
+package LiveMotor;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CarProposalComp {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\JAR\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://www.insurejoy.com/Application/Car?CPID=MTEzMjU4Ng");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/section[3]/div[1]/div[1]/md-radio-group[1]/md-radio-button[1]/div[1]/div[1]")).click();
+	
+		JavascriptExecutor j = (JavascriptExecutor) driver;
+	    j.executeScript("window.scrollBy(0,300)");
+		Thread.sleep(5000);  
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[10]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[3]/md-card[1]/md-card-content[1]/div[1]/div[3]/div[1]/button[1]")).click();
+		Thread.sleep(5000);
+	}
+	
+
+}

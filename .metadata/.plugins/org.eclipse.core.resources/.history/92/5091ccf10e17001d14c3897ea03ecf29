@@ -1,0 +1,29 @@
+package motor;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CarProposalComprehensive {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\JAR\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://qa.indiacover360.com/Application/Car?CPID=NzgzNTk");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().window().maximize();
+		driver.findElement(By.cssSelector("md-radio-button[id='radio_0'] div[class='_md-off']")).click();
+		//driver.findElement(By.xpath("//md-checkbox[contains(@class,'nooutline md-primary checkbtncaraddon ng-pristine ng-valid ng-scope md-default-theme ng-touched')]//div[contains(@class,'_md-label')]")).click();
+		//driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[10]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[5]/md-card[1]/md-card-content[1]/div[1]/div[3]/div[1]/button[1]/span[1]/span[1]/span[1]")).click();
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[10]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/div[5]/md-card[1]/md-card-content[1]/div[1]/div[3]/div[1]/a[1]")).click();
+		driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[11]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/*[name()='svg'][1]")).click();
+		Thread.sleep(5000);
+		driver.close();
+	}
+
+}

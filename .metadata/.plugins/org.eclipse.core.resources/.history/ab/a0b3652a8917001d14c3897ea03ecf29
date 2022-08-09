@@ -1,0 +1,28 @@
+package LiveMotor;
+
+import java.time.Duration;
+
+import org.omg.CORBA.PolicyTypeHelper;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CarProposalComp {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\JAR\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://www.insurejoy.com/Application/Car?CPID=MTEzMjU4Ng");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().window().maximize();
+		WebElement PolicyType=driver.findElement(By.xpath("//body/div[@id='nview']/div[1]/section[3]/div[1]/div[1]/md-radio-group[1]/md-radio-button[1]/div[1]/div[1]"));
+		PolicyType.click();
+		Thread.sleep(5000);
+	}
+
+}

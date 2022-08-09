@@ -1,0 +1,25 @@
+package motor;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CarProposalComprehensive {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "D:\\JAR\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://qa.indiacover360.com/Application/Car?CPID=NzgzNTk");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().window().maximize();
+		driver.findElement(By.cssSelector("md-radio-button[id='radio_0'] div[class='_md-off']")).click();
+		driver.findElement(By.xpath("//md-checkbox[contains(@class,'nooutline md-primary checkbtncaraddon ng-pristine ng-valid ng-scope md-default-theme ng-touched')]//div[contains(@class,'_md-label')]")).click();
+		Thread.sleep(5000);
+		driver.close();
+	}
+
+}
